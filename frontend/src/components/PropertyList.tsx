@@ -18,30 +18,18 @@ interface Props {
 
 const PropertyList: React.FC<Props> = ({ onSelect }) => (
 
-  <div className="table-container">
+  <div>
     <h2>Available Properties</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Location</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {properties.map((p) => (
-          <tr key={p.id}>
-            <td>{p.name}</td>
-            <td>{p.type}</td>
-            <td>{p.location}</td>
-            <td>
-              <button onClick={() => onSelect(p.id)}>Book</button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <ul>
+      {properties.map((p) => (
+        <li key={p.id} style={{ marginBottom: '0.5rem' }}>
+          <strong>{p.name}</strong> ({p.type}) - {p.location}
+          <button style={{ marginLeft: '1rem' }} onClick={() => onSelect(p.id)}>
+            Book
+          </button>
+        </li>
+      ))}
+    </ul>
 
   </div>
 );

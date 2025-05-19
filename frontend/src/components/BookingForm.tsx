@@ -1,11 +1,16 @@
 import React from 'react';
 
+
+import { Unit } from './UnitTable';
+
 interface Props {
   propertyId: string;
+  unit: Unit;
   onDone: () => void;
 }
 
-const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
+const BookingForm: React.FC<Props> = ({ propertyId, unit, onDone }) => {
+
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
@@ -14,7 +19,9 @@ const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
     await fetch('http://localhost:8000/api/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ propertyId, name, email, message }),
+
+      body: JSON.stringify({ propertyId, unitId: unit.id, name, email, message }),
+
     });
     alert('Booking submitted!');
     onDone();
@@ -22,9 +29,9 @@ const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
 
   return (
 
-    <div className="booking-form">
+    <div style={{ marginTop: '1rem' }}>
+      <h3>Book Unit {unit.number}</h3>
 
-      <h3>Book Property {propertyId}</h3>
       <div>
         <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       </div>
@@ -36,7 +43,7 @@ const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
       </div>
       <button onClick={submit}>Submit</button>
 
-      <button onClick={onDone}>Cancel</button>
+      <button onClick={onDone} style={{ marginLeft: '0.5rem' }}>Cancel</button>
 
     </div>
   );
