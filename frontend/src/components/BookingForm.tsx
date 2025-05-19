@@ -21,7 +21,9 @@ const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
   };
 
   return (
-    <div style={{ marginTop: '1rem' }}>
+
+    <div className="booking-form">
+
       <h3>Book Property {propertyId}</h3>
       <div>
         <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -33,7 +35,9 @@ const BookingForm: React.FC<Props> = ({ propertyId, onDone }) => {
         <textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} />
       </div>
       <button onClick={submit}>Submit</button>
-      <button onClick={onDone} style={{ marginLeft: '0.5rem' }}>Cancel</button>
+
+      <button onClick={onDone}>Cancel</button>
+
     </div>
   );
 };
