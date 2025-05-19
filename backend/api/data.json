@@ -1,0 +1,13 @@
+{
+  "units": [
+    {"id": "1", "propertyId": "1", "number": "A-12-01", "sqft": 1300, "price": 400000, "status": "available"},
+    {"id": "2", "propertyId": "1", "number": "A-12-02", "sqft": 1350, "price": 420000, "status": "booked"},
+    {"id": "3", "propertyId": "1", "number": "B-01-01", "sqft": 1100, "price": 380000, "status": "sold"},
+    {"id": "4", "propertyId": "1", "number": "B-01-02", "sqft": 1200, "price": 390000, "status": "available"},
+    {"id": "5", "propertyId": "2", "number": "C-05-01", "sqft": 900, "price": 500000, "status": "available"},
+    {"id": "6", "propertyId": "2", "number": "C-05-02", "sqft": 950, "price": 520000, "status": "available"},
+    {"id": "7", "propertyId": "2", "number": "D-10-01", "sqft": 1000, "price": 550000, "status": "sold"},
+    {"id": "8", "propertyId": "2", "number": "D-10-02", "sqft": 980, "price": 530000, "status": "booked"}
+  ],
+  "bookings": []
+}
