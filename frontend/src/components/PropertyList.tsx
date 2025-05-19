@@ -17,6 +17,7 @@ interface Props {
 }
 
 const PropertyList: React.FC<Props> = ({ onSelect }) => (
+
   <div className="table-container">
     <h2>Available Properties</h2>
     <table>
@@ -41,6 +42,7 @@ const PropertyList: React.FC<Props> = ({ onSelect }) => (
         ))}
       </tbody>
     </table>
+
   </div>
 );
 

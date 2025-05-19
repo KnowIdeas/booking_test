@@ -3,6 +3,7 @@ import PropertyList from './components/PropertyList';
 import BookingForm from './components/BookingForm';
 import './styles/main.css';
 
+
 const App: React.FC = () => {
   const [selectedPropertyId, setSelectedPropertyId] = React.useState<string | null>(null);
 
