@@ -17,6 +17,7 @@ interface Props {
 }
 
 const PropertyList: React.FC<Props> = ({ onSelect }) => (
+
   <div>
     <h2>Available Properties</h2>
     <ul>
@@ -29,6 +30,7 @@ const PropertyList: React.FC<Props> = ({ onSelect }) => (
         </li>
       ))}
     </ul>
+
   </div>
 );
 

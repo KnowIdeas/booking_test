@@ -3,6 +3,7 @@ header('Content-Type: application/json');
 
 $method = $_SERVER['REQUEST_METHOD'];
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
 $dataFile = __DIR__ . '/data.json';
 
 if (!file_exists($dataFile)) {
@@ -24,10 +25,12 @@ if ($path === '/api/units' && $method === 'GET') {
     $propertyId = $_GET['propertyId'] ?? null;
     $units = array_values(array_filter($data['units'], fn($u) => $u['propertyId'] === $propertyId));
     echo json_encode($units);
+
     exit;
 }
 
 if ($path === '/api/bookings' && $method === 'POST') {
+
     $payload = json_decode(file_get_contents('php://input'), true);
     $unitId = $payload['unitId'] ?? null;
     foreach ($data['units'] as &$u) {
@@ -44,6 +47,7 @@ if ($path === '/api/bookings' && $method === 'POST') {
     unset($u);
     $data['bookings'][] = $payload;
     file_put_contents($dataFile, json_encode($data, JSON_PRETTY_PRINT));
+
     echo json_encode(['status' => 'ok']);
     exit;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropertyList from './components/PropertyList';
 import BookingForm from './components/BookingForm';
+
 import UnitTable, { Unit } from './components/UnitTable';
 
 const App: React.FC = () => {
@@ -41,6 +42,7 @@ const App: React.FC = () => {
           onDone={bookingDone}
         />
       )}
+
     </div>
   );
 };
