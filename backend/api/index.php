@@ -1,6 +1,8 @@
 <?php
 header('Content-Type: application/json');
 
+header('Access-Control-Allow-Origin: *');
+
 $method = $_SERVER['REQUEST_METHOD'];
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
